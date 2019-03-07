@@ -1,8 +1,20 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 import { Component } from "react";
 
 export default class EditFishForm extends Component {
+  static propTypes = {
+    fish: PropTypes.shape({
+      image: PropTypes.string,
+      name: PropTypes.string,
+      price: PropTypes.number,
+      desc: PropTypes.string,
+      status: PropTypes.string
+    }),
+    index: PropTypes.string,
+    updateFish: PropTypes.func,
+    deleteFish: PropTypes.func
+  };
   handleChange = event => {
     console.log(event.currentTarget.value);
     // update that fish
